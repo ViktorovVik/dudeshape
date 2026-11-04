@@ -23,6 +23,20 @@ module.exports = (env, argv) => {
             'css-loader',
             'sass-loader'],
         },
+        {
+          test: /\.(png|jpe?g|gif|svg|webp)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[name].[contenthash:8][ext]',
+          },
+        },
+        {
+          test: /\.(woff2?|ttf|otf)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'fonts/[name].[contenthash:8][ext]',
+          },
+        },
       ],
     },
     plugins: [
