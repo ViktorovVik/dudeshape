@@ -1,5 +1,1 @@
-function log(text) {
-  console.log(text)
-}
-
-log('Hey')
+import './styles/main.scss';
