@@ -1,9 +1,9 @@
 {
   "name": "dudeshape",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "dev": "webpack server",
+    "dev": "webpack serve",
     "build": "webpack --mode production"
   },
   "keywords": [],
