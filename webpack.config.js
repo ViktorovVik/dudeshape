@@ -37,6 +37,10 @@ module.exports = (env, argv) => {
             filename: 'fonts/[name].[contenthash:8][ext]',
           },
         },
+        {
+          test: /\.html$/i,
+          use: 'html-loader',
+        }
       ],
     },
     plugins: [
