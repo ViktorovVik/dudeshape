@@ -3,8 +3,8 @@
 
 body {
   font-family: var(--font-family);
-  color: var(--color-black);
-  background-color: var(--color-bg);
+  color: var(--color-gray-alt);
+  background-color: var(--color-light);
   line-height: 1.7;
   font-size: 16px;
 
@@ -15,34 +15,25 @@ body {
 
 .h1,
 .h2,
-.h3 {
-  font-weight: 600;
-}
-
-.h1,
-.h2,
 .h3,
 .h4,
 .h5,
 .h6 {
-  color: var(--color-black);
+  color: var(--color-gray-dark);
+  font-family: var(--font-alt);
+  font-weight: 700;
+}
+
+.h1 {
+  font-size: fluid(56, 35);
 }
 
 .h2 {
-  font-size: fluid(34, 28);
+  font-size: fluid(32, 25);
 }
 
 .h3 {
-  font-size: 24px;
-  text-transform: uppercase;
-
-}
-
-.h4 {
-  font-size: 18px;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  font-weight: 400;
+  font-size: fluid(20, 18);
 }
 
 a,
@@ -67,7 +58,7 @@ a {
 }
 
 :focus-visible {
-  outline: 2px dashed var(--color-light);
+  outline: 2px dashed var(--color-gray-dark);
   outline-offset: 4px;
   transition-duration: 0s !important;
 }
@@ -84,7 +75,6 @@ button {
       content: '';
     }
   }
-
 }
 
 section {
