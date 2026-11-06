@@ -1,0 +1,50 @@
+@use '../helpers' as *;
+
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  padding-top: fluid(44, 25);
+  padding-bottom: 25px;
+  background-color: var(--color-light);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+  @supports (animation-timeline: scroll()) {
+    animation-name: scrolling-header;
+    animation-fill-mode: both;
+    animation-timeline: scroll();
+    animation-range: 0 200px;
+  }
+
+  @keyframes scrolling-header {
+    to {
+      padding-top: 25px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__search {
+      color: var(--color-accent);
+
+      @include hover {
+        color: var(--color-gray-dark);
+      }
+  }
+}
+
+.nav {
+
+  &__list {
+    display: flex;
+    column-gap: fluid-to-laptop(56, 20);
+  }
+
+  &__item {
+    color: var(--color-dark-alt);
+  }
+}
