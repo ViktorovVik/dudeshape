@@ -1,0 +1,94 @@
+@use './helpers' as *;
+
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-black);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  font-size: 16px;
+
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+.h1,
+.h2,
+.h3 {
+  font-weight: 600;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: var(--color-black);
+}
+
+.h2 {
+  font-size: fluid(34, 28);
+}
+
+.h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+
+}
+
+.h4 {
+  font-size: 18px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  font-weight: 400;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    color: var(--color-gray);
+  }
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: 2px dashed var(--color-light);
+  outline-offset: 4px;
+  transition-duration: 0s !important;
+}
+
+a,
+button {
+  border: none;
+  background: transparent;
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+
+      content: '';
+    }
+  }
+
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+
