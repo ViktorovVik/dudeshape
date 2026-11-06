@@ -29,11 +29,13 @@
   }
 
   &__search {
-      color: var(--color-accent);
+    @include flex-center;
 
-      @include hover {
-        color: var(--color-gray-dark);
-      }
+    color: var(--color-accent);
+
+    @include hover {
+      color: var(--color-gray-dark);
+    }
   }
 }
 
