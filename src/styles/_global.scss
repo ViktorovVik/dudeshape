@@ -1,0 +1,74 @@
+@use './helpers' as *;
+
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-gray-alt);
+  background-color: var(--color-light);
+  line-height: 1.7;
+  font-size: 16px;
+
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: var(--color-gray-dark);
+  font-family: var(--font-alt);
+  font-weight: 700;
+}
+
+.h1 {
+  font-size: fluid(56, 35);
+}
+
+.h2 {
+  font-size: fluid(32, 25);
+}
+
+.h3 {
+  font-size: fluid(20, 18);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+ @include focus-visible;
+}
+
+a,
+button {
+  border: none;
+  background: transparent;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+
