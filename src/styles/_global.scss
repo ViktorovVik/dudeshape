@@ -50,7 +50,7 @@ a {
   color: inherit;
 
   &:hover {
-    color: var(--color-gray);
+    color: var(--color-accent);
   }
   &[class] {
     text-decoration: none;
@@ -58,23 +58,13 @@ a {
 }
 
 :focus-visible {
-  outline: 2px dashed var(--color-gray-dark);
-  outline-offset: 4px;
-  transition-duration: 0s !important;
+ @include focus-visible;
 }
 
 a,
 button {
   border: none;
   background: transparent;
-  &[aria-label] {
-    position: relative;
-
-    &::before {
-
-      content: '';
-    }
-  }
 }
 
 section {
