@@ -36,17 +36,41 @@
     @include hover {
       color: var(--color-gray-dark);
     }
+
+    @include mobile {
+      margin-left: auto;
+    }
   }
 }
 
 .nav {
 
+  @include mobile {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-light);
+    padding: 15px;
+    font-size: 20px;
+    transition-property: translate, opacity, visibility;
+    transition-duration: var(--transition-duration);
+
+    &:not(.is-active) {
+      @include hide;
+
+      translate: 100%;
+    }
+  }
+
   &__list {
     display: flex;
     column-gap: fluid-to-laptop(56, 20);
-  }
 
-  &__item {
-    color: var(--color-dark-alt);
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 20px;
+      height: 100%;
+    }
   }
 }
