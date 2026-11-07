@@ -9,6 +9,44 @@
   <title>DudeShape</title>
 </head>
 <body>
-  <h1 class="h1">asdasd</h1>
+  <header class="header" data-js-header>
+    <div class="header__inner container">
+      <a class="header__logo" href="index.html">
+        <img
+          src="./assets/images/logo/logo.svg"
+          alt="DudeShape home"
+          width="147"
+          height="30"
+        />
+      </a>
+      <nav class="header__nav nav" aria-label="Header Navigation" id="main-nav" data-js-nav-menu>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#">Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">About</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="header__search" type="button" aria-label="Open search">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5691 0.0178223C4.74145 0.0178223 0 4.75609 0 10.5798C0 16.4039 4.74145 21.1418 10.5691 21.1418C16.3971 21.1418 21.1382 16.4039 21.1382 10.5798C21.1382 4.75609 16.3971 0.0178223 10.5691 0.0178223ZM10.5691 19.1919C5.81723 19.1919 1.95122 15.3285 1.95122 10.5799C1.95122 5.83119 5.81723 1.96773 10.5691 1.96773C15.321 1.96773 19.187 5.83114 19.187 10.5798C19.187 15.3285 15.321 19.1919 10.5691 19.1919Z" />
+            <path d="M23.714 22.3374L18.1205 16.7477C17.7393 16.3668 17.1221 16.3668 16.7409 16.7477C16.3598 17.1283 16.3598 17.7457 16.7409 18.1263L22.3344 23.7161C22.525 23.9065 22.7745 24.0017 23.0242 24.0017C23.2736 24.0017 23.5234 23.9065 23.714 23.7161C24.0951 23.3355 24.0951 22.718 23.714 22.3374Z" />
+        </svg>
+      </button>
+      <button class="header__burger-button burger-button visible-mobile" aria-controls="main-nav" type="button" aria-label="Open menu" aria-expanded="false" data-js-burger-button>
+        <span class="burger-button__line"></span>
+        <span class="burger-button__line"></span>
+        <span class="burger-button__line"></span>
+      </button>
+    </div>
+  </header>
 </body>
 </html>
