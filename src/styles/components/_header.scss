@@ -53,6 +53,7 @@
     font-size: 20px;
     transition-property: translate, opacity, visibility;
     transition-duration: var(--transition-duration);
+    overflow-y: auto;
 
     &:not(.is-active) {
       @include hide;
