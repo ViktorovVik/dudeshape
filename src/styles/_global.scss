@@ -8,9 +8,11 @@ body {
   line-height: 1.7;
   font-size: 16px;
 
-  &.is-lock {
-    overflow: hidden;
-  }
+   @include mobile {
+     &.is-lock {
+       overflow: hidden;
+     }
+   }
 }
 
 .h1,
