@@ -18,9 +18,15 @@ class MobileMenu {
 
   constructor() {
     this.headerElement = document.querySelector(this.selectors.header);
+    if (!this.headerElement) return;
     this.navElement = this.headerElement.querySelector(this.selectors.nav);
     this.burgerButtonElement = this.headerElement.querySelector(this.selectors.burgerButton);
+    if (!this.navElement || !this.burgerButtonElement) return;
     this.bindEvents();
+  }
+
+  get isMenuOpen() {
+    return this.navElement.classList.contains(this.classes.isActive);
   }
 
   toggleMenu = () => {
@@ -28,22 +34,29 @@ class MobileMenu {
     this.burgerButtonElement.classList.toggle(this.classes.isActive, isOpen);
     document.body.classList.toggle(this.classes.isLock, isOpen);
 
-    this.burgerButtonElement.setAttribute(this.ariaAttributes.ariaExpanded, isOpen);
+    this.burgerButtonElement.setAttribute(this.ariaAttributes.ariaExpanded, String(isOpen));
     this.burgerButtonElement.setAttribute(this.ariaAttributes.ariaLabel, isOpen ? 'Close menu' : 'Open menu');
   }
 
   onNavClick = (e) => {
     const isLinkClick = e.target.closest(this.selectors.navLink);
-    const isMEnuOpen = this.navElement.classList.contains(this.classes.isActive);
 
-    if (isLinkClick && isMEnuOpen) {
+    if (isLinkClick && this.isMenuOpen) {
       this.toggleMenu();
+    }
+  }
+
+  onKeyDown = (e) => {
+    if (e.key === 'Escape' && this.isMenuOpen) {
+      this.toggleMenu();
+      this.burgerButtonElement.focus();
     }
   }
 
   bindEvents() {
     this.burgerButtonElement.addEventListener('click', this.toggleMenu);
     this.navElement.addEventListener('click', this.onNavClick);
+    document.addEventListener('keydown', this.onKeyDown);
   }
 }
 
