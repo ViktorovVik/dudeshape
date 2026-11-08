@@ -6,6 +6,10 @@
   &__inner {
     display: flex;
     gap: fluid(100, 40);
+
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   &__picture {
@@ -24,6 +28,19 @@
         display: none;
       }
     }
+
+    &-img {
+      @include tablet {
+        object-fit: cover;
+        object-position: 50% 80%;
+        width: 100%;
+        max-height: 360px;
+      }
+
+      @include mobile {
+        max-height: unset;
+      }
+    }
   }
 
   &__content {
@@ -32,6 +49,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include tablet {
+      align-items: start;
+      align-self: center;
+    }
   }
 
   &__title {
