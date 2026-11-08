@@ -3,6 +3,7 @@ class MobileMenu {
     header: '[data-js-header]',
     nav: '[data-js-nav-menu]',
     burgerButton: '[data-js-burger-button]',
+    navLink: '[data-js-nav-link]',
   }
 
   ariaAttributes = {
@@ -31,8 +32,18 @@ class MobileMenu {
     this.burgerButtonElement.setAttribute(this.ariaAttributes.ariaLabel, isOpen ? 'Close menu' : 'Open menu');
   }
 
+  onNavClick = (e) => {
+    const isLinkClick = e.target.closest(this.selectors.navLink);
+    const isMEnuOpen = this.navElement.classList.contains(this.classes.isActive);
+
+    if (isLinkClick && isMEnuOpen) {
+      this.toggleMenu();
+    }
+  }
+
   bindEvents() {
     this.burgerButtonElement.addEventListener('click', this.toggleMenu);
+    this.navElement.addEventListener('click', this.onNavClick);
   }
 }
 
