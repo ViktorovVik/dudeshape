@@ -25,6 +25,10 @@ class MobileMenu {
     this.bindEvents();
   }
 
+  get isMenuOpen() {
+    return this.navElement.classList.contains(this.classes.isActive);
+  }
+
   toggleMenu = () => {
     const isOpen = this.navElement.classList.toggle(this.classes.isActive);
     this.burgerButtonElement.classList.toggle(this.classes.isActive, isOpen);
@@ -36,16 +40,23 @@ class MobileMenu {
 
   onNavClick = (e) => {
     const isLinkClick = e.target.closest(this.selectors.navLink);
-    const isMenuOpen = this.navElement.classList.contains(this.classes.isActive);
 
-    if (isLinkClick && isMenuOpen) {
+    if (isLinkClick && this.isMenuOpen) {
       this.toggleMenu();
+    }
+  }
+
+  onKeyDown = (e) => {
+    if (e.key === 'Escape' && this.isMenuOpen) {
+      this.toggleMenu();
+      this.burgerButtonElement.focus();
     }
   }
 
   bindEvents() {
     this.burgerButtonElement.addEventListener('click', this.toggleMenu);
     this.navElement.addEventListener('click', this.onNavClick);
+    document.addEventListener('keydown', this.onKeyDown);
   }
 }
 
