@@ -1,0 +1,77 @@
+@use '../helpers' as *;
+
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  padding-top: fluid(44, 25);
+  padding-bottom: 25px;
+  background-color: var(--color-light);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+  @supports (animation-timeline: scroll()) {
+    animation-name: scrolling-header;
+    animation-fill-mode: both;
+    animation-timeline: scroll();
+    animation-range: 0 200px;
+  }
+
+  @keyframes scrolling-header {
+    to {
+      padding-top: 25px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__search {
+    @include flex-center;
+
+    color: var(--color-accent);
+
+    @include hover {
+      color: var(--color-gray-dark);
+    }
+
+    @include mobile {
+      margin-left: auto;
+    }
+  }
+}
+
+.nav {
+
+  @include mobile {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-light);
+    padding: 15px;
+    font-size: 20px;
+    transition-property: translate, opacity, visibility;
+    transition-duration: var(--transition-duration);
+    overflow-y: auto;
+
+    &:not(.is-active) {
+      @include hide;
+
+      translate: 100%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: fluid-to-laptop(56, 20);
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 20px;
+      height: 100%;
+    }
+  }
+}
