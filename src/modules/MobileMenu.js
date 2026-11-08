@@ -18,8 +18,10 @@ class MobileMenu {
 
   constructor() {
     this.headerElement = document.querySelector(this.selectors.header);
+    if (!this.headerElement) return;
     this.navElement = this.headerElement.querySelector(this.selectors.nav);
     this.burgerButtonElement = this.headerElement.querySelector(this.selectors.burgerButton);
+    if (!this.navElement || !this.burgerButtonElement) return;
     this.bindEvents();
   }
 
