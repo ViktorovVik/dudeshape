@@ -28,15 +28,15 @@ class MobileMenu {
     this.burgerButtonElement.classList.toggle(this.classes.isActive, isOpen);
     document.body.classList.toggle(this.classes.isLock, isOpen);
 
-    this.burgerButtonElement.setAttribute(this.ariaAttributes.ariaExpanded, isOpen);
+    this.burgerButtonElement.setAttribute(this.ariaAttributes.ariaExpanded, String(isOpen));
     this.burgerButtonElement.setAttribute(this.ariaAttributes.ariaLabel, isOpen ? 'Close menu' : 'Open menu');
   }
 
   onNavClick = (e) => {
     const isLinkClick = e.target.closest(this.selectors.navLink);
-    const isMEnuOpen = this.navElement.classList.contains(this.classes.isActive);
+    const isMenuOpen = this.navElement.classList.contains(this.classes.isActive);
 
-    if (isLinkClick && isMEnuOpen) {
+    if (isLinkClick && isMenuOpen) {
       this.toggleMenu();
     }
   }
