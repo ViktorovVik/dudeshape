@@ -1,0 +1,44 @@
+@use '../helpers' as *;
+
+.hero {
+  &__inner {
+    display: flex;
+  }
+
+  &__content {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-dark-bg);
+    padding: fluid(100, 30);
+    font-size: 20px;
+    color: var(--color-light);
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: var(--color-light);
+  }
+
+  &__text {
+    max-width: 488px;
+    margin-bottom: fluid(35, 20);
+    line-height: 1.2;
+  }
+
+  &__link {
+    @include flex-center(true);
+
+    align-self: flex-start;
+    height: 56px;
+    background-color: var(--color-light);
+    color: var(--color-dark-bg);
+    padding-inline: 25px;
+
+    @include hover {
+      opacity: 0.9;
+    }
+  }
+}
