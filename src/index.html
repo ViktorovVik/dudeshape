@@ -25,7 +25,7 @@
             <a class="nav__link" href="#" data-js-nav-link>Home</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#" data-js-nav-link>About</a>
+            <a class="nav__link" href="#about" data-js-nav-link>About</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" href="#furniture" data-js-nav-link>Features</a>
@@ -70,6 +70,49 @@
         >
           Explore More
         </a>
+      </div>
+    </div>
+  </section>
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="about__inner container">
+      <picture class="about__picture">
+        <source media="(width <= 767px)" srcset="./assets/images/about/about-mobile.webp"/>
+        <img class="about__img" src="./assets/images/about/about.webp" loading="lazy" alt="Modern cozy room" width="596" height="577">
+      </picture>
+      <div class="about__content">
+        <h2 class="about__title h2" id="about-title">About Us</h2>
+        <div class="about__text">
+          <p>All of our furniture uses the best materials and choices for our customers. All of our furniture uses the best materials</p>
+        </div>
+        <ul class="about__list">
+          <li class="about__item">
+            <svg class="about__icon" width="50" height="50" aria-hidden="true">
+              <use href="./assets/icons/sprites.svg#icon-quality"></use>
+            </svg>
+            <div class="about__item-content">
+              <h3 class="about__item-title h3">Best Quality</h3>
+              <p class="about__item-descr">All of our furniture uses the best materials and choices</p>
+            </div>
+          </li>
+          <li class="about__item">
+            <svg class="about__icon" width="50" height="50" aria-hidden="true">
+              <use href="./assets/icons/sprites.svg#icon-source"></use>
+            </svg>
+            <div class="about__item-content">
+              <h3 class="about__item-title h3">100% Secure</h3>
+              <p class="about__item-descr">All of our furniture uses the best materials and choices</p>
+            </div>
+          </li>
+          <li class="about__item">
+            <svg class="about__icon" width="50" height="50" aria-hidden="true">
+              <use href="./assets/icons/sprites.svg#icon-shipping"></use>
+            </svg>
+            <div class="about__item-content">
+              <h3 class="about__item-title h3">Free Shipping</h3>
+              <p class="about__item-descr">All of our furniture uses the best materials and choices</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
