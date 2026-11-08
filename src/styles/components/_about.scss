@@ -1,0 +1,75 @@
+@use '../helpers' as *;
+
+.about {
+  padding-block: fluid(140, 30);
+
+  &__inner {
+    display: flex;
+    gap: fluid(100, 40);
+  }
+
+  &__picture {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      translate: 35px 35px;
+      background-color: var(--color-gray-light);
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.25;
+    max-width: 437px;
+    margin-bottom: fluid(40, 20);
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 30px;
+  }
+
+  &__item {
+    display: flex;
+    column-gap: fluid(28, 15);
+
+    &-icon {
+      align-self: flex-start;
+      flex-shrink: 0;
+      color: var(--color-gray-icon);
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 14px;
+      max-width: 306px;
+    }
+
+    &-descr {
+      font-size: 18px;
+      line-height: 1.44444;
+    }
+  }
+}
