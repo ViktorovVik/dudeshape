@@ -3,6 +3,18 @@
 .hero {
   &__inner {
     display: flex;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    @include tablet {
+      object-fit: cover;
+      width: 100%;
+      max-height: 360px;
+    }
   }
 
   &__content {
@@ -12,10 +24,11 @@
     flex-direction: column;
     justify-content: center;
     background-color: var(--color-dark-bg);
-    padding: fluid(100, 30);
+    padding: fluid-to-laptop(100, 30);
     font-size: 20px;
     color: var(--color-light);
   }
+
 
   &__title {
     margin-bottom: 20px;
