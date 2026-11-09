@@ -1,0 +1,73 @@
+@use "../helpers" as *;
+
+.popular {
+  padding-bottom: fluid(140, 30);
+
+  &__inner {
+
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 25px;
+    margin-bottom: fluid(80, 20);
+  }
+
+  &__title {
+
+  }
+
+  &__text {
+    font-size: 20px;
+    max-width: 819px;
+  }
+
+  &__buttons {
+    display: flex;
+    column-gap: 16px;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: end;
+  }
+
+  &__button {
+    $root: &;
+
+    --buttonBgColor: #F4F6F6;
+    --arrowColor: #666666;
+    --arrowHover: #D1CECE;
+
+    @include flex-center(true);
+    @include square(40px);
+
+    border-radius: 50%;
+    background-color: var(--buttonBgColor);
+    color: var(--arrowColor);
+
+    @include hover {
+      color: var(--arrowHover);
+    }
+
+    &--prev {
+      #{$root}-icon {
+        rotate: 180deg;
+      }
+    }
+  }
+
+  &__swiper {
+
+    &-list {
+
+    }
+
+    &-item {
+
+    }
+  }
+
+  &__card {
+
+  }
+}
