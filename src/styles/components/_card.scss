@@ -1,0 +1,80 @@
+@use '../helpers' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  max-width: 380px;
+  box-shadow: 0 13px 26px 0 rgba(0, 0, 0, 0.07);
+  background-color: var(--color-light);
+
+  &__content {
+    padding: 0 fluid(30, 15) fluid(30, 15);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    line-height: 1.35;
+    font-weight: 500;
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 8px;
+  }
+
+  &__action {
+    --actionBgColor: #ECF4FF;
+    --actionActive: #EF5423;
+
+    @include flex-center;
+    @include square(26px);
+
+    background-color: var(--actionBgColor);
+    border-radius: 50%;
+
+    @include hover {
+      background-color: var(--color-accent);
+      color: var(--color-light);
+    }
+
+    &[aria-pressed='true'] {
+      background-color: var(--actionActive);
+      color: var(--color-light);
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--color-dark-bg);
+  }
+
+  &__button {
+    padding-inline: 15px;
+    background-color: var(--color-gray-icon);
+    color: var(--color-light);
+    font-weight: 400;
+    line-height: 1.75;
+
+    @include hover {
+      background-color: var(--color-accent);
+    }
+  }
+}
