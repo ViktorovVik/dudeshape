@@ -116,12 +116,12 @@
       </div>
     </div>
   </section>
-  <section class="popular" id="popular" aria-labelledby="popular-title">
+  <section class="popular" id="popular" aria-labelledby="popular-title" data-js-slider>
     <div class="popular__inner container">
       <header class="popular__top">
         <h2 class="popular__title h2" id="popular-title">Our Popular Furniture</h2>
         <p class="popular__text">All of our furniture uses the best materials and choices for our customers. All of our furniture uses the best materials and choices for our customers.</p>
-        <div class="popular__buttons" data-js-swiper-buttons>
+        <div class="popular__buttons">
           <button class="popular__button popular__button--prev" type="button" aria-label="Previous slide" data-js-swiper-button-prev>
             <svg class="popular__button-icon" width="40" height="40" aria-hidden="true">
               <use href="./assets/icons/sprites.svg#icon-arrow-right"></use>
@@ -151,7 +151,7 @@
                   <h3 class="card__title h3">White Swan Chair</h3>
                   <ul class="card__list">
                     <li class="card__item">
-                      <button class="card__action" type="button" aria-label="Add to favorites" aria-pressed="false">
+                      <button class="card__action" type="button" aria-label="Add to favorites" aria-pressed="false" data-js-favorite>
                         <svg class="card__icon" width="26" height="26" aria-hidden="true">
                           <use href="./assets/icons/sprites.svg#icon-heart"></use>
                         </svg>
@@ -188,7 +188,7 @@
                   <h3 class="card__title h3">White Wooden Table</h3>
                   <ul class="card__list">
                     <li class="card__item">
-                      <button class="card__action" type="button" aria-label="Add to favorites" aria-pressed="false">
+                      <button class="card__action" type="button" aria-label="Add to favorites" aria-pressed="false" data-js-favorite>
                         <svg class="card__icon" width="26" height="26" aria-hidden="true">
                           <use href="./assets/icons/sprites.svg#icon-heart"></use>
                         </svg>
@@ -204,7 +204,7 @@
                   </ul>
                 </div>
                 <div class="card__bottom">
-                  <data class="card__price" value="40">$80</data>
+                  <data class="card__price" value="80">$80</data>
                   <button class="card__button" type="button">Buy Now</button>
                 </div>
               </div>
@@ -225,7 +225,7 @@
                   <h3 class="card__title h3">White Couch</h3>
                   <ul class="card__list">
                     <li class="card__item">
-                      <button class="card__action" type="button" aria-label="Add to favorites" aria-pressed="false">
+                      <button class="card__action" type="button" aria-label="Add to favorites" aria-pressed="false" data-js-favorite>
                         <svg class="card__icon" width="26" height="26" aria-hidden="true">
                           <use href="./assets/icons/sprites.svg#icon-heart"></use>
                         </svg>
@@ -241,7 +241,81 @@
                   </ul>
                 </div>
                 <div class="card__bottom">
-                  <data class="card__price" value="40">$200</data>
+                  <data class="card__price" value="200">$200</data>
+                  <button class="card__button" type="button">Buy Now</button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="swiper-slide popular__swiper-item">
+            <article class="popular__card card">
+              <img
+                class="card__img"
+                src="./assets/images/popular/img3.webp"
+                alt="Couch and a wooden table"
+                width="380"
+                height="247"
+                loading="lazy"
+              />
+              <div class="card__content">
+                <div class="card__top">
+                  <h3 class="card__title h3">White Couch</h3>
+                  <ul class="card__list">
+                    <li class="card__item">
+                      <button class="card__action" type="button" aria-label="Add to favorites" aria-pressed="false" data-js-favorite>
+                        <svg class="card__icon" width="26" height="26" aria-hidden="true">
+                          <use href="./assets/icons/sprites.svg#icon-heart"></use>
+                        </svg>
+                      </button>
+                    </li>
+                    <li class="card__item">
+                      <button class="card__action" type="button" aria-label="Share">
+                        <svg class="card__icon" width="26" height="26" aria-hidden="true">
+                          <use href="./assets/icons/sprites.svg#icon-share"></use>
+                        </svg>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card__bottom">
+                  <data class="card__price" value="200">$200</data>
+                  <button class="card__button" type="button">Buy Now</button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="swiper-slide popular__swiper-item">
+            <article class="popular__card card">
+              <img
+                class="card__img"
+                src="./assets/images/popular/img2.webp"
+                alt="Wooden table with 4 chairs for an office"
+                width="380"
+                height="247"
+                loading="lazy"
+              />
+              <div class="card__content">
+                <div class="card__top">
+                  <h3 class="card__title h3">White Wooden Table</h3>
+                  <ul class="card__list">
+                    <li class="card__item">
+                      <button class="card__action" type="button" aria-label="Add to favorites" aria-pressed="false" data-js-favorite>
+                        <svg class="card__icon" width="26" height="26" aria-hidden="true">
+                          <use href="./assets/icons/sprites.svg#icon-heart"></use>
+                        </svg>
+                      </button>
+                    </li>
+                    <li class="card__item">
+                      <button class="card__action" type="button" aria-label="Share">
+                        <svg class="card__icon" width="26" height="26" aria-hidden="true">
+                          <use href="./assets/icons/sprites.svg#icon-share"></use>
+                        </svg>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card__bottom">
+                  <data class="card__price" value="80">$80</data>
                   <button class="card__button" type="button">Buy Now</button>
                 </div>
               </div>
