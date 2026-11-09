@@ -3,19 +3,11 @@
 .popular {
   padding-bottom: fluid(140, 30);
 
-  &__inner {
-
-  }
-
   &__top {
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: 25px;
     margin-bottom: fluid(80, 20);
-  }
-
-  &__title {
-
   }
 
   &__text {
@@ -45,8 +37,10 @@
     background-color: var(--buttonBgColor);
     color: var(--arrowColor);
 
-    @include hover {
-      color: var(--arrowHover);
+    &:not(:disabled) {
+      @include hover {
+        color: var(--arrowHover);
+      }
     }
 
     &--prev {
@@ -54,20 +48,9 @@
         rotate: 180deg;
       }
     }
-  }
 
-  &__swiper {
-
-    &-list {
-
+    &:disabled {
+      @include disabled;
     }
-
-    &-item {
-
-    }
-  }
-
-  &__card {
-
   }
 }
