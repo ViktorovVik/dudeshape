@@ -1,6 +1,6 @@
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
-import "swiper/css";
+
 
 const rootSelector = '[data-js-slider]';
 
@@ -24,8 +24,8 @@ class Slider {
   initSwiper() {
     this.swiper = new Swiper(this.swiperElement, {
       modules: [Navigation],
-      slidesPerView: 1,
-      spaceBetween: 30,
+      slidesPerView: 1.5,
+      spaceBetween: 15,
       breakpoints: {
         768: {
           slidesPerView: 2,

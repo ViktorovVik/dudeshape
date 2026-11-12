@@ -3,20 +3,35 @@
 .card {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: fluid-to-laptop(30, 15);
   max-width: 380px;
+  height: 100%;
   box-shadow: 0 13px 26px 0 rgba(0, 0, 0, 0.07);
   background-color: var(--color-light);
 
+
+  @include tablet {
+    max-width: unset;
+  }
+
+  &__img {
+    @include tablet {
+      width: 100%;
+    }
+  }
+
   &__content {
+    display: flex;
+    flex-direction: column;
     padding: 0 fluid(30, 15) fluid(30, 15);
+    flex-grow: 1;
   }
 
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: fluid(20, 15);
   }
 
   &__title {
@@ -58,6 +73,7 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
+    margin-top: auto;
   }
 
   &__price {
