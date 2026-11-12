@@ -8,6 +8,10 @@
     grid-template-columns: 1fr auto;
     column-gap: 25px;
     margin-bottom: fluid(80, 20);
+
+    @include mobile {
+      grid-template-columns: auto;
+    }
   }
 
   &__text {
