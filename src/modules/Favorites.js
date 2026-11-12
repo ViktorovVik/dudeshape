@@ -1,22 +1,21 @@
 class Favorites {
   selectors = {
     likeButton: '[data-js-favorite]',
-    card: '[data-js-card-id]'
-  }
+    card: '[data-js-card-id]',
+  };
 
   attributes = {
     ariaPressed: 'aria-pressed',
     ariaLabel: 'aria-label',
-  }
+  };
 
   localStorageKey = 'dudeshape:favorite';
 
-
   constructor() {
     this.state = {
-      items: this.getFavorites()
-    }
-    this.init();
+      items: this.getFavorites(),
+    };
+    this.updateButtons();
     this.bindEvents();
   }
 
@@ -45,7 +44,7 @@ class Favorites {
     }
   }
 
-  updateStates(favoriteElement, isFavorite) {
+  updateState(favoriteElement, isFavorite) {
     favoriteElement.setAttribute(this.attributes.ariaPressed, String(isFavorite));
     favoriteElement.setAttribute(this.attributes.ariaLabel, isFavorite ? 'Remove from favorites' : 'Add to favorites');
   }
@@ -61,27 +60,27 @@ class Favorites {
     const isPressed = favoriteElement.getAttribute(this.attributes.ariaPressed) === 'true';
     const isFavorite = !isPressed;
 
-    let nextFavoriteStateList;
+    let nextFavorites;
 
     if (isFavorite) {
-      nextFavoriteStateList = [...this.state.items, dataId];
+      nextFavorites = [...this.state.items, dataId];
     } else {
-      nextFavoriteStateList = this.state.items.filter((id) => dataId !== id);
+      nextFavorites = this.state.items.filter((id) => dataId !== id);
     }
 
-    this.setFavorites(nextFavoriteStateList);
-    this.init();
+    this.setFavorites(nextFavorites);
+    this.updateButtons();
   }
 
-  init() {
-    const cards = document.querySelectorAll(this.selectors.card);
-    cards.forEach(card => {
-      const cardDataId = card.dataset.jsCardId;
+  updateButtons() {
+    const cardElements = document.querySelectorAll(this.selectors.card);
+    cardElements.forEach((cardElement) => {
+      const cardDataId = cardElement.dataset.jsCardId;
       const isFavorite = this.state.items.includes(cardDataId);
-      const favoriteButton = card.querySelector(this.selectors.likeButton);
+      const favoriteButton = cardElement.querySelector(this.selectors.likeButton);
       if (!favoriteButton) return;
-      this.updateStates(favoriteButton, isFavorite);
-    })
+      this.updateState(favoriteButton, isFavorite);
+    });
   }
 
   bindEvents() {
