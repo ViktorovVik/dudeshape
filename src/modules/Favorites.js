@@ -1,5 +1,5 @@
 class Favorites {
-  selector = {
+  selectors = {
     likeButton: '[data-js-favorite]',
     card: '[data-js-card-id]'
   }
@@ -16,6 +16,7 @@ class Favorites {
     this.state = {
       items: this.getFavorites()
     }
+    this.init();
     this.bindEvents();
   }
 
@@ -44,18 +45,22 @@ class Favorites {
     }
   }
 
+  updateStates(favoriteElement, isFavorite) {
+    favoriteElement.setAttribute(this.attributes.ariaPressed, String(isFavorite));
+    favoriteElement.setAttribute(this.attributes.ariaLabel, isFavorite ? 'Remove from favorites' : 'Add to favorites');
+  }
+
   toggleFavorites = (event) => {
-    const favoriteElement = event.target.closest(this.selector.likeButton);
+    const favoriteElement = event.target.closest(this.selectors.likeButton);
     if (!favoriteElement) return;
 
-    const cardElement = event.target.closest(this.selector.card);
+    const cardElement = event.target.closest(this.selectors.card);
     if (!cardElement) return;
     const dataId = cardElement.dataset.jsCardId;
 
     const isPressed = favoriteElement.getAttribute(this.attributes.ariaPressed) === 'true';
     const isFavorite = !isPressed;
-    favoriteElement.setAttribute(this.attributes.ariaPressed, String(isFavorite));
-    favoriteElement.setAttribute(this.attributes.ariaLabel, isFavorite ? 'Remove from favorites' : 'Add to favorites');
+    this.updateStates(favoriteElement, isFavorite);
 
     let nextFavoriteStateList;
 
@@ -66,6 +71,17 @@ class Favorites {
     }
 
     this.setFavorites(nextFavoriteStateList);
+  }
+
+  init() {
+    const cards = document.querySelectorAll(this.selectors.card);
+    cards.forEach(card => {
+      const cardDataId = card.dataset.jsCardId;
+      const isFavorite = this.state.items.includes(cardDataId);
+      const favoriteButton = card.querySelector(this.selectors.likeButton);
+      if (!favoriteButton) return;
+      this.updateStates(favoriteButton, isFavorite);
+    })
   }
 
   bindEvents() {
