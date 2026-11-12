@@ -60,7 +60,6 @@ class Favorites {
 
     const isPressed = favoriteElement.getAttribute(this.attributes.ariaPressed) === 'true';
     const isFavorite = !isPressed;
-    this.updateStates(favoriteElement, isFavorite);
 
     let nextFavoriteStateList;
 
@@ -71,6 +70,7 @@ class Favorites {
     }
 
     this.setFavorites(nextFavoriteStateList);
+    this.init();
   }
 
   init() {
