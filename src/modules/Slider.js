@@ -24,8 +24,18 @@ class Slider {
   initSwiper() {
     this.swiper = new Swiper(this.swiperElement, {
       modules: [Navigation],
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 30,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      },
       navigation: {
         prevEl: this.prevButtonElement,
         nextEl: this.nextButtonElement,
