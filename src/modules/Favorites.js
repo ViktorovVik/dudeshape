@@ -57,12 +57,12 @@ class Favorites {
     if (!cardElement) return;
     const dataId = cardElement.dataset.jsCardId;
 
-    const isPressed = favoriteElement.getAttribute(this.attributes.ariaPressed) === 'true';
-    const isFavorite = !isPressed;
+    const isFavoriteNow = this.state.items.includes(dataId);
+    const willBeFavorite = !isFavoriteNow;
 
     let nextFavorites;
 
-    if (isFavorite) {
+    if (willBeFavorite) {
       nextFavorites = [...this.state.items, dataId];
     } else {
       nextFavorites = this.state.items.filter((id) => dataId !== id);
