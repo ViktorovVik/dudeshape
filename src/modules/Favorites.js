@@ -18,7 +18,7 @@ class Favorites {
       items: this.getFavorites(),
     };
     this.updateButtons();
-    this.countCounter();
+    this.updateCounter();
     this.bindEvents();
   }
 
@@ -46,7 +46,7 @@ class Favorites {
     }
   }
 
-  countCounter() {
+  updateCounter() {
     if (!this.counterNumElement) return;
 
     const amount = this.state.items.length;
@@ -84,7 +84,7 @@ class Favorites {
 
     this.setFavorites(nextFavorites);
     this.updateButtons();
-    this.countCounter();
+    this.updateCounter();
   }
 
   updateButtons() {

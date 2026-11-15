@@ -30,6 +30,7 @@
 
   &__actions {
     display: flex;
+    column-gap: 15px;
 
     @include mobile {
       margin-left: auto;
@@ -100,8 +101,8 @@
     line-height: 13px;
     min-width: 16px;
 
-     &:empty {
+    &:empty {
       visibility: hidden;
-     }
+    }
   }
 }
