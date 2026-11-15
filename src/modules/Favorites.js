@@ -2,6 +2,7 @@ class Favorites {
   selectors = {
     likeButton: '[data-js-favorite]',
     card: '[data-js-card-id]',
+    counterNum: '[data-js-counter-number]',
   };
 
   attributes = {
@@ -12,10 +13,12 @@ class Favorites {
   localStorageKey = 'dudeshape:favorite';
 
   constructor() {
+    this.counterNumElement = document.querySelector(this.selectors.counterNum);
     this.state = {
       items: this.getFavorites(),
     };
     this.updateButtons();
+    this.countCounter();
     this.bindEvents();
   }
 
@@ -24,7 +27,6 @@ class Favorites {
       const rawData = localStorage.getItem(this.localStorageKey);
       if (!rawData) return [];
       const parsedData = JSON.parse(rawData);
-
       return Array.isArray(parsedData) ? parsedData : [];
     } catch {
       console.error('Failed to get favorites from localStorage');
@@ -41,6 +43,18 @@ class Favorites {
       localStorage.setItem(this.localStorageKey, data);
     } catch {
       console.error('Failed to set favorites to localStorage');
+    }
+  }
+
+  countCounter() {
+    if (!this.counterNumElement) return;
+
+    const amount = this.state.items.length;
+
+    if (amount === 0) {
+      this.counterNumElement.textContent = '';
+    } else {
+      this.counterNumElement.textContent = String(amount);
     }
   }
 
@@ -70,6 +84,7 @@ class Favorites {
 
     this.setFavorites(nextFavorites);
     this.updateButtons();
+    this.countCounter();
   }
 
   updateButtons() {
