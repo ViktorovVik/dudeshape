@@ -11,6 +11,35 @@
     margin-bottom: 20px;
   }
 
+  &__deco {
+    position: relative;
+    isolation: isolate;
+
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      background-color: var(--color-dark-bg);
+      width: 190px;
+      height: 86px;
+    }
+
+    &::before {
+      left: -13px;
+      top: -13px;
+    }
+
+    &::after {
+      right: -13px;
+      bottom: -13px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 1;
+  }
+
   &__body {
     display: flex;
     justify-content: space-between;
