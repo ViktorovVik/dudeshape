@@ -51,16 +51,54 @@ class Tabs {
     this.updateTabPanels();
   }
 
+  makeActiveTab(tabIndex) {
+    this.state.activeIndex = tabIndex;
+    this.render();
+    this.buttonElements[tabIndex].focus();
+  }
+
   toggleTabs = (event) => {
     const currentButton = event.target.closest(this.selectors.button);
     if (!currentButton) return;
 
-    this.state.activeIndex = [...this.buttonElements].indexOf(currentButton);
-    this.render();
+    const clickedIndex = [...this.buttonElements].indexOf(currentButton);
+    this.makeActiveTab(clickedIndex);
+  }
+
+  handlerKeyboardClick = (event) => {
+    const currentButton = event.target.closest(this.selectors.button);
+    if (!currentButton) return;
+
+    if (event.key === 'Home' || (event.metaKey && event.key === 'ArrowLeft')) {
+      event.preventDefault();
+      this.makeActiveTab(0);
+    } else if (event.key === 'End' ||  (event.metaKey && event.key === 'ArrowRight')) {
+      event.preventDefault();
+      this.makeActiveTab(this.buttonElements.length - 1);
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      let nextIndex = this.state.activeIndex + 1;
+
+      if (nextIndex >= this.buttonElements.length) {
+        nextIndex = 0;
+      }
+      this.makeActiveTab(nextIndex);
+
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      let prevIndex = this.state.activeIndex - 1;
+
+      if (prevIndex < 0) {
+        prevIndex = this.buttonElements.length - 1;
+      }
+
+      this.makeActiveTab(prevIndex);
+    }
   }
 
   bindEvents() {
     this.rootElement.addEventListener('click', this.toggleTabs);
+    this.rootElement.addEventListener('keydown', this.handlerKeyboardClick);
   }
 }
 
