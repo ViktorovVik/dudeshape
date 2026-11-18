@@ -7,6 +7,10 @@ class Furniture {
     category: '[data-js-furniture-category]',
   }
 
+  attributes = {
+    ariaPressed: 'aria-pressed',
+  }
+
   constructor(rootElement) {
     this.rootElement = rootElement;
     this.imgElement = this.rootElement.querySelector(this.selectors.img);
@@ -16,6 +20,7 @@ class Furniture {
     }
     this.getFurniture();
     this.bindEvents();
+    this.render();
   }
 
   async getFurniture() {
@@ -35,13 +40,27 @@ class Furniture {
     this.render();
   }
 
-  render() {
+  updateButtons() {
+    this.categoryElements.forEach((button) => {
+      const buttonCategory = button.dataset.jsFurnitureCategory;
+
+      const isChosen = buttonCategory === this.state.category;
+      button.setAttribute(this.attributes.ariaPressed, String(isChosen));
+    })
+  }
+
+  updateImage() {
     if (!this.furnitureData) return;
     const furnitureItem = this.furnitureData.find((furniture) => furniture.category === this.state.category);
     if (!furnitureItem) return;
 
     this.imgElement.src = furnitureItem.src;
     this.imgElement.alt = furnitureItem.alt;
+  }
+
+  render() {
+    this.updateImage();
+    this.updateButtons();
   }
 
   bindEvents() {

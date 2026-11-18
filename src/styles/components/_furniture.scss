@@ -79,14 +79,13 @@
     line-height: 1.3125;
     font-weight: 500;
 
-
-    @include hover {
-      background-color: var(--color-accent);
+    &[aria-pressed='true'] {
+      background-color: var(--color-dark-bg);
       color: var(--color-light);
     }
 
-    &:active {
-      background-color: var(--color-dark-bg);
+    @include hover {
+      background-color: var(--color-accent);
       color: var(--color-light);
     }
   }
