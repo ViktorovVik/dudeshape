@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "category": "living",
+    "src": "./images/furniture/furniture2.webp",
+    "alt": "White big couch with a little table in front furniture"
+  },
+  {
+    "category": "bed",
+    "src": "./images/furniture/furniture4.webp",
+    "alt": "Big wooden bed for both people"
+  },
+  {
+    "category": "office",
+    "src": "./images/furniture/furniture1.webp",
+    "alt": "Office furniture with white desks and chairs"
+  },
+  {
+    "category": "dining",
+    "src": "./images/furniture/furniture5.webp",
+    "alt": "The wooden light table for six people"
+  },
+  {
+    "category": "kitchen",
+    "src": "./images/furniture/furniture3.webp",
+    "alt": "White coloured kitchen furniture"
+  },
+  {
+    "category": "hallway",
+    "src": "./images/furniture/furniture6.webp",
+    "alt": "Hallway bright chair and a clothe holder"
+  }
+]
