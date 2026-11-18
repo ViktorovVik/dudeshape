@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
@@ -39,7 +40,12 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.html$/i,
-          use: 'html-loader',
+          loader: 'html-loader',
+          options: {
+            sources: {
+              urlFilter: (attribute, value) => !value.startsWith('./images/'),
+            }
+          }
         }
       ],
     },
@@ -48,6 +54,11 @@ module.exports = (env, argv) => {
         template: './src/index.html',
       }),
       new MiniCssExtractPlugin(),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: 'public' }
+        ]
+      })
     ],
     devServer: {
       port: 3000,
