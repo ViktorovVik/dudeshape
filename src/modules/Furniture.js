@@ -11,6 +11,10 @@ class Furniture {
     ariaPressed: 'aria-pressed',
   }
 
+  stateClasses = {
+    isAppearing: 'is-appearing',
+  }
+
   constructor(rootElement) {
     this.rootElement = rootElement;
     this.imgElement = this.rootElement.querySelector(this.selectors.img);
@@ -56,6 +60,12 @@ class Furniture {
 
     this.imgElement.src = furnitureItem.src;
     this.imgElement.alt = furnitureItem.alt;
+    this.imgElement.classList.add(this.stateClasses.isAppearing);
+  }
+
+  handleImageAnimationEnd = () => {
+    this.imgElement.classList.remove(this.stateClasses.isAppearing);
+
   }
 
   render() {
@@ -65,6 +75,7 @@ class Furniture {
 
   bindEvents() {
     this.rootElement.addEventListener('click', this.handleCategoryClick);
+    this.imgElement.addEventListener('animationend', this.handleImageAnimationEnd);
   }
 }
 

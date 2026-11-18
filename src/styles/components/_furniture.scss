@@ -35,10 +35,19 @@
     }
   }
 
-  &__image {
+  &__frame {
     position: relative;
     z-index: 1;
+    background-color: var(--color-light);
+  }
+
+  &__image {
     aspect-ratio: 553 / 390;
+    object-fit: cover;
+
+    &.is-appearing {
+      animation: fade-picture var(--transition-duration-longer);
+    }
   }
 
   &__body {
@@ -90,4 +99,9 @@
       color: var(--color-light);
     }
   }
+}
+
+@keyframes fade-picture {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
