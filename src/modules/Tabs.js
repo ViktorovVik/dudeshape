@@ -65,6 +65,26 @@ class Tabs {
     this.makeActiveTab(clickedIndex);
   }
 
+  getNextIndex() {
+    let nextIndex = this.state.activeIndex + 1;
+
+    if (nextIndex >= this.buttonElements.length) {
+      nextIndex = 0;
+    }
+
+    return nextIndex;
+  }
+
+  getPreviousIndex() {
+    let prevIndex = this.state.activeIndex - 1;
+
+    if (prevIndex < 0) {
+      prevIndex = this.buttonElements.length - 1;
+    }
+
+    return prevIndex;
+  }
+
   handlerKeyboardClick = (event) => {
     const currentButton = event.target.closest(this.selectors.button);
     if (!currentButton) return;
@@ -77,22 +97,15 @@ class Tabs {
       this.makeActiveTab(this.buttonElements.length - 1);
     } else if (event.key === 'ArrowRight') {
       event.preventDefault();
-      let nextIndex = this.state.activeIndex + 1;
 
-      if (nextIndex >= this.buttonElements.length) {
-        nextIndex = 0;
-      }
-      this.makeActiveTab(nextIndex);
+      const nexTabIndex = this.getNextIndex();
+      this.makeActiveTab(nexTabIndex);
 
     } else if (event.key === 'ArrowLeft') {
       event.preventDefault();
-      let prevIndex = this.state.activeIndex - 1;
 
-      if (prevIndex < 0) {
-        prevIndex = this.buttonElements.length - 1;
-      }
-
-      this.makeActiveTab(prevIndex);
+      const previousTabIndex = this.getPreviousIndex();
+      this.makeActiveTab(previousTabIndex);
     }
   }
 
