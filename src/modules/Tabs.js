@@ -104,6 +104,11 @@ class Tabs {
     this.makeActiveTab(newIndex);
   }
 
+  destroy() {
+    this.rootElement.removeEventListener('click', this.toggleTabs);
+    this.rootElement.removeEventListener('keydown', this.handleKeydown);
+  }
+
   bindEvents() {
     this.rootElement.addEventListener('click', this.toggleTabs);
     this.rootElement.addEventListener('keydown', this.handleKeydown);
