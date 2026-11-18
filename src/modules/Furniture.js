@@ -73,6 +73,11 @@ class Furniture {
     this.updateButtons();
   }
 
+  destroy() {
+    this.rootElement.removeEventListener('click', this.handleCategoryClick);
+    this.imgElement.removeEventListener('animationend', this.handleImageAnimationEnd);
+  }
+
   bindEvents() {
     this.rootElement.addEventListener('click', this.handleCategoryClick);
     this.imgElement.addEventListener('animationend', this.handleImageAnimationEnd);
@@ -88,6 +93,11 @@ export class FurnitureCollection {
   init() {
     const elements = document.querySelectorAll(rootSelector);
     this.instance = [...elements].map((element) => new Furniture(element));
+  }
+
+  destroy() {
+    this.instance.forEach((instance) => {instance.destroy()});
+    this.instance = [];
   }
 }
 
