@@ -5,15 +5,15 @@ class Furniture {
     furnitureRoot: rootSelector,
     img: '[data-js-furniture-img]',
     category: '[data-js-furniture-category]',
-  }
+  };
 
   attributes = {
     ariaPressed: 'aria-pressed',
-  }
+  };
 
   stateClasses = {
     isAppearing: 'is-appearing',
-  }
+  };
 
   constructor(rootElement) {
     this.rootElement = rootElement;
@@ -21,7 +21,7 @@ class Furniture {
     this.categoryElements = this.rootElement.querySelectorAll(this.selectors.category);
     this.state = {
       category: 'office',
-    }
+    };
     this.getFurniture();
     this.bindEvents();
     this.render();

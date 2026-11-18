@@ -5,16 +5,16 @@ class Tabs {
     tabsRoot: rootSelector,
     button: '[data-js-tabs-button]',
     content: '[data-js-tabs-content]',
-  }
+  };
 
   attributes = {
     ariaSelected: 'aria-selected',
-    tabindex: 'tabindex'
-  }
+    tabindex: 'tabindex',
+  };
 
   stateClasses = {
     isActive: 'is-active',
-  }
+  };
 
   constructor(rootElement) {
     this.rootElement = rootElement;
@@ -43,7 +43,7 @@ class Tabs {
     this.contentElements.forEach((contentElement, index) => {
       const isShown = index === this.state.activeIndex;
       contentElement.classList.toggle(this.stateClasses.isActive, isShown);
-    })
+    });
   }
 
   render() {
