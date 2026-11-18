@@ -36,7 +36,9 @@ class Furniture {
   }
 
   render() {
+    if (!this.furnitureData) return;
     const furnitureItem = this.furnitureData.find((furniture) => furniture.category === this.state.category);
+    if (!furnitureItem) return;
 
     this.imgElement.src = furnitureItem.src;
     this.imgElement.alt = furnitureItem.alt;
