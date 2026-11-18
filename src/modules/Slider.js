@@ -1,16 +1,14 @@
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
-
 const rootSelector = '[data-js-slider]';
 
 class Slider {
-
   selectors = {
     swiperRoot: '[data-js-swiper]',
     prevButton: '[data-js-swiper-button-prev]',
     nextButton: '[data-js-swiper-button-next]',
-  }
+  };
 
   constructor(rootElement) {
     this.rootElement = rootElement;
@@ -33,7 +31,7 @@ class Slider {
         },
         1024: {
           slidesPerView: 3,
-          spaceBetween: 30
+          spaceBetween: 30,
         }
       },
       navigation: {
