@@ -334,6 +334,250 @@
       </div>
     </div>
   </section>
+  <section class="furniture" id="furniture" aria-labelledby="furniture-title">
+    <div class="furniture__inner container">
+      <h2 class="furniture__title h2" id="furniture-title">All Furniture</h2>
+      <div class="furniture__top tabs" data-js-tabs>
+        <header class="tabs__top">
+          <ul class="tabs__buttons" role="tablist">
+            <li class="tabs__item" role="presentation">
+              <button
+                class="tabs__button"
+                type="button"
+                role="tab"
+                id="tab-1"
+                aria-selected="true"
+                aria-controls="tabpanel-1"
+                data-js-tabs-button
+              >
+                Shop By Room
+              </button>
+            </li>
+            <li class="tabs__item" role="presentation">
+              <button
+                class="tabs__button"
+                type="button"
+                role="tab"
+                id="tab-2"
+                aria-selected="false"
+                aria-controls="tabpanel-2"
+                data-js-tabs-button
+                tabindex="-1"
+              >
+                Shop By Category
+              </button>
+            </li>
+            <li class="tabs__item" role="presentation">
+              <button
+                class="tabs__button"
+                type="button"
+                role="tab"
+                id="tab-3"
+                aria-selected="false"
+                aria-controls="tabpanel-3"
+                data-js-tabs-button
+                tabindex="-1"
+              >
+                Shop By Style
+              </button>
+            </li>
+          </ul>
+        </header>
+        <div class="tabs__body furniture__body" data-js-furniture>
+          <div class="furniture__deco">
+            <div class="furniture__frame">
+              <img
+                class="furniture__image"
+                src="./images/furniture/furniture1.webp"
+                alt="Office furniture with white desks and chairs"
+                width="553"
+                height="390"
+                loading="lazy"
+                data-js-furniture-img
+              />
+            </div>
+          </div>
+          <div
+            class="tabs__content furniture__panel is-active"
+            id="tabpanel-1"
+            aria-labelledby="tab-1"
+            role="tabpanel"
+            tabindex="0"
+            data-js-tabs-content
+          >
+            <ul class="furniture__actions">
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="living">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-couch"></use>
+                  </svg>
+                  Living Room
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="kitchen">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-kitchen"></use>
+                  </svg>
+                  Kitchen
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="dining">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-dining"></use>
+                  </svg>
+                  Dining Room
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="office">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-office"></use>
+                  </svg>
+                  Office
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="bed">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-bed"></use>
+                  </svg>
+                  Bed Room
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="hallway">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-hallway"></use>
+                  </svg>
+                  Hallway
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="tabs__content furniture__panel"
+            id="tabpanel-2"
+            aria-labelledby="tab-2"
+            role="tabpanel"
+            tabindex="0"
+            data-js-tabs-content
+          >
+            <ul class="furniture__actions">
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="living">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-couch"></use>
+                  </svg>
+                  Living Category
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="dining">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-dining"></use>
+                  </svg>
+                  Dining Category
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="bed">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-bed"></use>
+                  </svg>
+                  Bed Category
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="kitchen">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-kitchen"></use>
+                  </svg>
+                  Kitchen Category
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="office">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-office"></use>
+                  </svg>
+                  Office Category
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="hallway">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-hallway"></use>
+                  </svg>
+                  Hallway Category
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="tabs__content furniture__panel"
+            id="tabpanel-3"
+            aria-labelledby="tab-3"
+            role="tabpanel"
+            tabindex="0"
+            data-js-tabs-content
+          >
+            <ul class="furniture__actions">
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="living">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-couch"></use>
+                  </svg>
+                  Living Style
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="dining">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-dining"></use>
+                  </svg>
+                  Dining Style
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="bed">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-bed"></use>
+                  </svg>
+                  Bed Style
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="kitchen">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-kitchen"></use>
+                  </svg>
+                  Kitchen Style
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="office">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-office"></use>
+                  </svg>
+                  Office Style
+                </button>
+              </li>
+              <li class="furniture__select">
+                <button class="furniture__action" type="button" data-js-furniture-category="hallway">
+                  <svg class="furniture__action-icon" width="24" height="24" aria-hidden="true">
+                    <use href="./assets/icons/sprites.svg#icon-hallway"></use>
+                  </svg>
+                  Hallway Style
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 </body>
 </html>

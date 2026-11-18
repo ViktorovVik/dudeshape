@@ -1,0 +1,32 @@
+[
+  {
+    "category": "living",
+    "src": "./images/furniture/furniture2.webp",
+    "alt": "White big couch with a coffee table"
+  },
+  {
+    "category": "bed",
+    "src": "./images/furniture/furniture4.webp",
+    "alt": "Wooden double bed"
+  },
+  {
+    "category": "office",
+    "src": "./images/furniture/furniture1.webp",
+    "alt": "Office furniture with white desks and chairs"
+  },
+  {
+    "category": "dining",
+    "src": "./images/furniture/furniture5.webp",
+    "alt": "Light wooden dining table for six"
+  },
+  {
+    "category": "kitchen",
+    "src": "./images/furniture/furniture3.webp",
+    "alt": "White kitchen cabinets"
+  },
+  {
+    "category": "hallway",
+    "src": "./images/furniture/furniture6.webp",
+    "alt": "Bright hallway chair and a coat rack"
+  }
+]

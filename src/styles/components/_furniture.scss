@@ -1,0 +1,107 @@
+@use '../helpers' as *;
+
+.furniture {
+  padding-bottom: fluid(140, 30);
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__deco {
+    position: relative;
+    isolation: isolate;
+
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      background-color: var(--color-dark-bg);
+      width: 190px;
+      height: 86px;
+    }
+
+    &::before {
+      left: -13px;
+      top: -13px;
+    }
+
+    &::after {
+      right: -13px;
+      bottom: -13px;
+    }
+  }
+
+  &__frame {
+    position: relative;
+    z-index: 1;
+    background-color: var(--color-light);
+  }
+
+  &__image {
+    aspect-ratio: 553 / 390;
+    object-fit: cover;
+
+    &.is-appearing {
+      animation: fade-picture var(--transition-duration-longer);
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: fluid(30, 20);
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__panel {
+    max-width: 474px;
+    width: 100%;
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: fluid(30, 15);
+  }
+
+  &__action {
+    --buttonColor: #808080;
+    --buttonBorder: #d9dce5;
+
+    @include flex-center(true);
+
+    flex-direction: column;
+    row-gap: fluid(14, 10);
+    padding: 15px 10px;
+    border: 1.5px solid var(--buttonBorder);
+    color: var(--buttonColor);
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    line-height: 1.3125;
+    font-weight: 500;
+
+    &[aria-pressed='true'] {
+      background-color: var(--color-dark-bg);
+      color: var(--color-light);
+    }
+
+    @include hover {
+      background-color: var(--color-accent);
+      color: var(--color-light);
+    }
+  }
+}
+
+@keyframes fade-picture {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
