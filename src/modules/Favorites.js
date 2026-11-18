@@ -1,3 +1,5 @@
+import * as storage from "../utils/storage";
+
 class Favorites {
   selectors = {
     likeButton: '[data-js-favorite]',
@@ -23,27 +25,14 @@ class Favorites {
   }
 
   getFavorites() {
-    try {
-      const rawData = localStorage.getItem(this.localStorageKey);
-      if (!rawData) return [];
-      const parsedData = JSON.parse(rawData);
-      return Array.isArray(parsedData) ? parsedData : [];
-    } catch {
-      console.error('Failed to get favorites from localStorage');
-
-      return [];
-    }
+    const data = storage.get(this.localStorageKey, []);
+    return Array.isArray(data) ? data : [];
   }
 
   setFavorites(favorites) {
     this.state.items = favorites;
 
-    try {
-      const data = JSON.stringify(favorites);
-      localStorage.setItem(this.localStorageKey, data);
-    } catch {
-      console.error('Failed to set favorites to localStorage');
-    }
+    storage.set(this.localStorageKey, favorites);
   }
 
   updateCounter() {
