@@ -15,7 +15,7 @@
     }
 
     @include mobile-s {
-      justify-content: unset;
+      justify-content:  flex-start;
     }
   }
 
@@ -28,7 +28,6 @@
     font-size: fluid(24, 18);
     line-height: 1.125;
     white-space: nowrap;
-    flex-shrink: 0;
 
     &::after {
       content: '';
