@@ -85,33 +85,28 @@ class Tabs {
     return prevIndex;
   }
 
-  handlerKeyboardClick = (event) => {
+  handleKeydown = (event) => {
     const currentButton = event.target.closest(this.selectors.button);
     if (!currentButton) return;
-
+    let newIndex;
     if (event.key === 'Home' || (event.metaKey && event.key === 'ArrowLeft')) {
-      event.preventDefault();
-      this.makeActiveTab(0);
+      newIndex = 0;
     } else if (event.key === 'End' ||  (event.metaKey && event.key === 'ArrowRight')) {
-      event.preventDefault();
-      this.makeActiveTab(this.buttonElements.length - 1);
+      newIndex = this.buttonElements.length - 1;
     } else if (event.key === 'ArrowRight') {
-      event.preventDefault();
-
-      const nexTabIndex = this.getNextIndex();
-      this.makeActiveTab(nexTabIndex);
-
+      newIndex = this.getNextIndex();
     } else if (event.key === 'ArrowLeft') {
-      event.preventDefault();
-
-      const previousTabIndex = this.getPreviousIndex();
-      this.makeActiveTab(previousTabIndex);
+      newIndex = this.getPreviousIndex();
+    } else {
+      return;
     }
+    event.preventDefault();
+    this.makeActiveTab(newIndex);
   }
 
   bindEvents() {
     this.rootElement.addEventListener('click', this.toggleTabs);
-    this.rootElement.addEventListener('keydown', this.handlerKeyboardClick);
+    this.rootElement.addEventListener('keydown', this.handleKeydown);
   }
 }
 
