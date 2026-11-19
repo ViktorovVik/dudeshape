@@ -25,6 +25,8 @@ class Newsletter {
     isVisible: 'is-visible',
   }
 
+  #hideTimeoutId = null;
+
   constructor(rootElement) {
     this.rootElement = rootElement;
     this.buttonElement = this.rootElement.querySelector(this.selectors.button);
@@ -39,6 +41,7 @@ class Newsletter {
 
   handleSubmit = async (event) => {
     event.preventDefault();
+    clearTimeout(this.#hideTimeoutId);
     this.state.status = 'sending';
     this.render();
     await wait(1500);
@@ -48,12 +51,14 @@ class Newsletter {
     if (isResolved) {
       this.rootElement.reset();
     }
-    await wait(4000);
-    this.state.status = 'idle';
-    this.render();
+    this.#hideTimeoutId = setTimeout(() => {
+      this.state.status = 'idle';
+      this.render();
+    }, 4000);
   }
 
   handleCloseClick = () => {
+    clearTimeout(this.#hideTimeoutId);
     this.state.status = 'idle';
     this.render();
   }
