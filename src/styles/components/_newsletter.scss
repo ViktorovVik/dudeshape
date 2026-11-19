@@ -81,4 +81,22 @@
       pointer-events: none;
     }
   }
+
+  &__message {
+    position: fixed;
+    bottom: fluid(24, 15);
+    right: fluid(24, 15);
+    z-index: 5;
+    padding: fluid(30, 15);
+    border-radius: 5px;
+    background-color: var(--sectionBg);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+    transition: var(--transition-duration-longer);
+
+    &:empty {
+      opacity: 0;
+      visibility: hidden;
+      translate: 100% 0;
+    }
+  }
 }
