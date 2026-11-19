@@ -622,21 +622,21 @@
       <div class="newsletter__text">
         <p>Be the first to know about new collections, exclusive offers and interior ideas. No spam, unsubscribe anytime.</p>
       </div>
-      <form class="newsletter__form" data-js-newsletter>
-        <label class="newsletter__label visually-hidden" for="newsletter-email">Email address</label>
-        <div class="newsletter__field">
-          <svg class="newsletter__icon" width="16" height="16" aria-hidden="true">
+      <form class="newsletter__form subscribe-form" data-js-newsletter>
+        <label class="subscribe-form__label visually-hidden" for="newsletter-email">Email address</label>
+        <div class="subscribe-form__field">
+          <svg class="subscribe-form__icon" width="16" height="16" aria-hidden="true">
             <use href="./assets/icons/sprites.svg#icon-email"></use>
           </svg>
-          <input class="newsletter__input" id="newsletter-email" type="email" autocomplete="email" required name="email" placeholder="example@mail.com"/>
-          <button class="newsletter__button" type="submit" data-js-newsletter-button>
+          <input class="subscribe-form__input" id="newsletter-email" type="email" autocomplete="email" required name="email" placeholder="example@mail.com"/>
+          <button class="subscribe-form__button" type="submit" data-js-newsletter-button>
             <span data-js-newsletter-button-label>Subscribe</span>
           </button>
         </div>
-        <div class="newsletter__toast" data-js-newsletter-toast>
-          <p class="newsletter__message" role="status" data-js-newsletter-message></p>
-          <button class="newsletter__close" type="button" aria-label="Close notification" data-js-newsletter-close>
-            <svg class="newsletter__close-icon" width="30" height="30" aria-hidden="true">
+        <div class="toast" data-js-newsletter-toast>
+          <p class="toast__message" role="status" data-js-newsletter-message></p>
+          <button class="toast__close" type="button" aria-label="Close notification" data-js-newsletter-close>
+            <svg class="toast__close-icon" width="30" height="30" aria-hidden="true">
               <use href="./assets/icons/sprites.svg#icon-close"></use>
             </svg>
           </button>
