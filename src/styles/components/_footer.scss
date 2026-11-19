@@ -1,0 +1,18 @@
+@use '../helpers' as *;
+
+.footer {
+  padding-top: fluid(100, 30);
+  padding-bottom: 20px;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+
+  &__top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) 1fr 1fr minmax(0, 1.5fr);
+    column-gap: 1rem;
+  }
+
+  &__logo {
+    color: var(--color-light);
+  }
+}

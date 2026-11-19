@@ -11,13 +11,10 @@
 <body>
   <header class="header" data-js-header>
     <div class="header__inner container">
-      <a class="header__logo" href="index.html">
-        <img
-          src="./assets/images/logo/logo.svg"
-          alt="DudeShape home"
-          width="147"
-          height="30"
-        />
+      <a class="header__logo logo" href="index.html" aria-label="DudeShape home">
+        <svg class="logo__icon" width="144" height="23" aria-hidden="true">
+          <use href="./assets/icons/sprites.svg#icon-logo"></use>
+        </svg>
       </a>
       <nav class="header__nav nav" aria-label="Header Navigation" id="main-nav" data-js-nav-menu>
         <ul class="nav__list">
@@ -649,14 +646,10 @@
     <div class="footer__inner container">
       <div class="footer__top">
         <div class="footer__info">
-          <a class="footer__logo" href="index.html">
-            <img
-              class="footer__logo-img"
-              src="./assets/images/logo/logo.svg"
-              alt="DudeShape home"
-              width="147"
-              height="30"
-            />
+          <a class="footer__logo logo logo--light" href="index.html" aria-label="DudeShape home">
+            <svg class="logo__icon" width="144" height="23" aria-hidden="true">
+              <use href="./assets/icons/sprites.svg#icon-logo"></use>
+            </svg>
           </a>
           <div class="footer__text">
             <p>Modern furniture for every room of your home. Thoughtful design, honest materials and fast delivery.</p>
@@ -732,21 +725,21 @@
         <div class="footer__subscribe">
           <h2 class="footer__title h3">Subscribe</h2>
           <p class="footer__cta">Subscribe to get the latest news from us</p>
-          <form class="newsletter__form" data-js-newsletter>
-            <label class="newsletter__label visually-hidden" for="footer-email">Email address</label>
-            <div class="newsletter__field">
-              <input class="newsletter__input" id="footer-email" type="email" autocomplete="email" required name="email" placeholder="example@mail.com"/>
-              <button class="newsletter__button" type="submit" data-js-newsletter-button>
+          <form class="footer__form subscribe-form subscribe-form--compat" data-js-newsletter>
+            <label class="subscribe-form__label visually-hidden" for="footer-email">Email address</label>
+            <div class="subscribe-form__field">
+              <input class="subscribe-form__input" id="footer-email" type="email" autocomplete="email" required name="email" placeholder="example@mail.com"/>
+              <button class="subscribe-form__button" type="submit" data-js-newsletter-button>
                 <span class="visually-hidden" data-js-newsletter-button-label>Subscribe</span>
-                <svg class="footer__send-icon" width="16" height="16" aria-hidden="true">
+                <svg class="subscribe-form__send-icon" width="16" height="16" aria-hidden="true">
                   <use href="./assets/icons/sprites.svg#icon-send-arrow"></use>
                 </svg>
               </button>
             </div>
-            <div class="newsletter__toast" data-js-newsletter-toast>
-              <p class="newsletter__message" role="status" data-js-newsletter-message></p>
-              <button class="newsletter__close" type="button" aria-label="Close notification" data-js-newsletter-close>
-                <svg class="newsletter__close-icon" width="30" height="30" aria-hidden="true">
+            <div class="toast" data-js-newsletter-toast>
+              <p class="toast__message" role="status" data-js-newsletter-message></p>
+              <button class="toast__close" type="button" aria-label="Close notification" data-js-newsletter-close>
+                <svg class="toast__close-icon" width="30" height="30" aria-hidden="true">
                   <use href="./assets/icons/sprites.svg#icon-close"></use>
                 </svg>
               </button>
