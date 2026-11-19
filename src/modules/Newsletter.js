@@ -9,6 +9,7 @@ class Newsletter {
     message: '[data-js-newsletter-message]',
     toast: '[data-js-newsletter-toast]',
     closeButton: '[data-js-newsletter-close]',
+    span: '[data-js-newsletter-button-label]',
   };
 
   messages = {
@@ -33,6 +34,7 @@ class Newsletter {
     this.messageElement = this.rootElement.querySelector(this.selectors.message);
     this.toastElement = this.rootElement.querySelector(this.selectors.toast);
     this.closeButtonElement = this.rootElement.querySelector(this.selectors.closeButton);
+    this.spanElement = this.rootElement.querySelector(this.selectors.span);
     this.state = {
       status: 'idle'
     }
@@ -66,7 +68,7 @@ class Newsletter {
   render() {
     const isSending = this.state.status === 'sending';
     this.buttonElement.disabled = isSending;
-    this.buttonElement.textContent = isSending ? this.buttonLabels.sending : this.buttonLabels.idle;
+    this.spanElement.textContent = isSending ? this.buttonLabels.sending : this.buttonLabels.idle;
     const isVisible = this.state.status === 'success' || this.state.status === 'error';
     if (isVisible) {
       this.messageElement.textContent = this.messages[this.state.status];
