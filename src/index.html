@@ -631,7 +631,14 @@
           <input class="newsletter__input" id="newsletter-email" type="email" autocomplete="email" required name="email" placeholder="example@mail.com"/>
           <button class="newsletter__button" type="submit" data-js-newsletter-button>Subscribe</button>
         </div>
+        <div class="newsletter__toast" data-js-newsletter-toast>
           <p class="newsletter__message" role="status" data-js-newsletter-message></p>
+          <button class="newsletter__close" type="button" aria-label="Close notification" data-js-newsletter-close>
+            <svg class="newsletter__close-icon" width="30" height="30" aria-hidden="true">
+              <use href="./assets/icons/sprites.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
       </form>
     </div>
   </section>

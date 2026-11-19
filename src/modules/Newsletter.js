@@ -7,6 +7,8 @@ class Newsletter {
     formRoot: rootSelector,
     button: '[data-js-newsletter-button]',
     message: '[data-js-newsletter-message]',
+    toast: '[data-js-newsletter-toast]',
+    closeButton: '[data-js-newsletter-close]',
   };
 
   messages = {
@@ -19,10 +21,16 @@ class Newsletter {
     idle: 'Subscribe',
   };
 
+  stateClasses = {
+    isVisible: 'is-visible',
+  }
+
   constructor(rootElement) {
     this.rootElement = rootElement;
     this.buttonElement = this.rootElement.querySelector(this.selectors.button);
     this.messageElement = this.rootElement.querySelector(this.selectors.message);
+    this.toastElement = this.rootElement.querySelector(this.selectors.toast);
+    this.closeButtonElement = this.rootElement.querySelector(this.selectors.closeButton);
     this.state = {
       status: 'idle'
     }
@@ -40,13 +48,20 @@ class Newsletter {
     if (isResolved) {
       this.rootElement.reset();
     }
+    await wait(4000);
+    this.state.status = 'idle';
+    this.render();
   }
 
   render() {
     const isSending = this.state.status === 'sending';
     this.buttonElement.disabled = isSending;
     this.buttonElement.textContent = isSending ? this.buttonLabels.sending : this.buttonLabels.idle;
-    this.messageElement.textContent = this.messages[this.state.status] || '';
+    const isVisible = this.state.status === 'success' || this.state.status === 'error';
+    if (isVisible) {
+      this.messageElement.textContent = this.messages[this.state.status];
+    }
+    this.toastElement.classList.toggle(this.stateClasses.isVisible, isVisible);
   }
 
   bindEvents() {
@@ -62,6 +77,6 @@ export class NewsletterCollection {
 
   init() {
     const elements = document.querySelectorAll(rootSelector);
-    this.instance = [...elements].map((element) => {new Newsletter(element)});
+    this.instance = [...elements].map((element) => new Newsletter(element));
   }
 }
