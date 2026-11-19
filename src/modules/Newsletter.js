@@ -74,6 +74,12 @@ class Newsletter {
     this.toastElement.classList.toggle(this.stateClasses.isVisible, isVisible);
   }
 
+  destroy() {
+    this.rootElement.removeEventListener('submit', this.handleSubmit);
+    this.closeButtonElement.removeEventListener('click', this.handleCloseClick);
+    clearTimeout(this.#hideTimeoutId);
+  }
+
   bindEvents() {
     this.rootElement.addEventListener('submit', this.handleSubmit);
     this.closeButtonElement.addEventListener('click', this.handleCloseClick);
@@ -89,5 +95,10 @@ export class NewsletterCollection {
   init() {
     const elements = document.querySelectorAll(rootSelector);
     this.instance = [...elements].map((element) => new Newsletter(element));
+  }
+
+  destroy() {
+    this.instance.forEach((instance) => instance.destroy());
+    this.instance = [];
   }
 }
