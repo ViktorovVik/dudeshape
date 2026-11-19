@@ -1,0 +1,115 @@
+@use '../helpers' as *;
+
+.newsletter {
+  padding-bottom: fluid(140, 30);
+
+  &__inner {
+    --sectionBg: #f4f6f6;
+
+    padding-top: fluid(68, 20);
+    padding-bottom: fluid(55, 20);
+    background: var(--sectionBg);
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: fluid(40, 20);
+  }
+
+  &__title,
+  &__text {
+    max-width: 605px;
+    width: 100%;
+    margin-inline:auto;
+  }
+
+  &__form {
+    margin-inline: auto;
+    max-width: 471px;
+    width: 100%;
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    background-color: var(--color-light);
+    padding: 7px fluid(18, 7);
+
+    &:has(.newsletter__input:focus) {
+      @include focus-visible;
+    }
+  }
+
+  &__icon {
+    --iconMailColor: #7F7F7F;
+
+    color: var(--iconMailColor);
+    flex-shrink: 0;
+  }
+
+  &__input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    min-width: 0;
+  }
+
+  &__button {
+    @include flex-center(true);
+
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    padding: 15px fluid-to-laptop(31, 15);
+
+    @include hover {
+      background-color: var(--color-gray-icon);
+    }
+
+    &:active {
+      background-color: var(--color-gray-alt);
+    }
+
+    &:disabled {
+      background-color: var(--color-accent);
+      color: var(--color-light);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+  }
+
+  &__toast{
+    position: fixed;
+    bottom: fluid(24, 15);
+    right: fluid(24, 15);
+    z-index: 5;
+    padding: fluid(30, 15);
+    border-radius: 5px;
+    background-color: var(--sectionBg);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+    opacity: 0;
+    visibility: hidden;
+    translate: 100% 0;
+    transition: var(--transition-duration-longer);
+
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+      translate: 0 0;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include hover {
+      color: var(--color-gray-alt);
+    }
+  }
+}
