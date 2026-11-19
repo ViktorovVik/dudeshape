@@ -53,6 +53,11 @@ class Newsletter {
     this.render();
   }
 
+  handleCloseClick = () => {
+    this.state.status = 'idle';
+    this.render();
+  }
+
   render() {
     const isSending = this.state.status === 'sending';
     this.buttonElement.disabled = isSending;
@@ -66,6 +71,7 @@ class Newsletter {
 
   bindEvents() {
     this.rootElement.addEventListener('submit', this.handleSubmit);
+    this.closeButtonElement.addEventListener('click', this.handleCloseClick);
   }
 }
 
