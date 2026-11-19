@@ -622,15 +622,16 @@
       <div class="newsletter__text">
         <p>Be the first to know about new collections, exclusive offers and interior ideas. No spam, unsubscribe anytime.</p>
       </div>
-      <form class="newsletter__form">
+      <form class="newsletter__form" data-js-newsletter>
         <label class="newsletter__label visually-hidden" for="newsletter-email">Email address</label>
         <div class="newsletter__field">
           <svg class="newsletter__icon" width="16" height="16" aria-hidden="true">
             <use href="./assets/icons/sprites.svg#icon-email"></use>
           </svg>
           <input class="newsletter__input" id="newsletter-email" type="email" autocomplete="email" required name="email" placeholder="example@mail.com"/>
-          <button class="newsletter__button" type="submit">Subscribe</button>
+          <button class="newsletter__button" type="submit" data-js-newsletter-button>Subscribe</button>
         </div>
+          <p class="newsletter__message" role="status" data-js-newsletter-message></p>
       </form>
     </div>
   </section>

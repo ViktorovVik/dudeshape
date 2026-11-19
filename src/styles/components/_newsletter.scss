@@ -73,5 +73,12 @@
     &:active {
       background-color: var(--color-gray-alt);
     }
+
+    &:disabled {
+      background-color: var(--color-accent);
+      color: var(--color-light);
+      opacity: 0.9;
+      pointer-events: none;
+    }
   }
 }

@@ -3,6 +3,7 @@ import { SliderCollection } from './modules/Slider';
 import Favorites from './modules/Favorites';
 import { TabsCollection } from './modules/Tabs';
 import { FurnitureCollection } from './modules/Furniture';
+import { NewsletterCollection } from "./modules/Newsletter";
 import 'swiper/css';
 import './styles/index.scss';
 
@@ -11,3 +12,4 @@ new SliderCollection();
 new Favorites();
 new TabsCollection();
 new FurnitureCollection();
+new NewsletterCollection();
