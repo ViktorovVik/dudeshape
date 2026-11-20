@@ -7,10 +7,10 @@ module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
 
   return {
-    mode: 'development',
+    mode: isProd ? 'production' : 'development',
     entry: './src/index.js',
     output: {
-      filename: 'main.js',
+      filename: isProd ? '[name].[contenthash:8].js' : '[name].js',
       path: path.resolve(__dirname, 'dist'),
       clean: true,
     },
@@ -53,7 +53,9 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
-      new MiniCssExtractPlugin(),
+      new MiniCssExtractPlugin({
+        filename: '[name].[contenthash:8].css',
+      }),
       new CopyWebpackPlugin({
         patterns: [
           { from: 'public' }
