@@ -87,9 +87,7 @@
     }
 
     &-icon {
-      --starColor: #ffb624;
-
-      color: var(--starColor);
+      color: var(--color-yellow);
       flex-shrink: 0;
     }
   }

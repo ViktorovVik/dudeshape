@@ -1,0 +1,76 @@
+@use '../helpers' as *;
+
+.subscribe-form {
+  &__field {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    background-color: var(--color-light);
+    padding: 7px fluid(18, 7);
+
+    &:has(.subscribe-form__input:focus) {
+      @include focus-visible;
+    }
+  }
+
+  &__icon {
+    --iconMailColor: #7F7F7F;
+
+    color: var(--iconMailColor);
+    flex-shrink: 0;
+  }
+
+  &__input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    min-width: 0;
+
+    &:-webkit-autofill,
+    &:autofill {
+      box-shadow: 0 0 0 100px var(--color-light) inset;
+      -webkit-text-fill-color: black;
+    }
+  }
+
+  &__button {
+    @include flex-center(true);
+
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    padding: 15px fluid-to-laptop(31, 15);
+
+    @include hover {
+      background-color: var(--color-gray-icon);
+    }
+
+    &:active {
+      background-color: var(--color-gray-alt);
+    }
+
+    &:disabled {
+      background-color: var(--color-accent);
+      color: var(--color-light);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+  }
+
+  &--compact {
+    .subscribe-form__button {
+      padding: 6px;
+      border-radius: 100%;
+      width: 28px;
+      background-color: var(--color-yellow);
+      color: var(--color-light);
+
+      @include hover {
+        background-color: var(--color-gray-icon);
+      }
+
+      &:active {
+        background-color: var(--color-gray-alt);
+      }
+    }
+  }
+}
