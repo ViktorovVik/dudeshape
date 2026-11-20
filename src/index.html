@@ -689,43 +689,51 @@
           </div>
         </div>
         <nav class="footer__nav" aria-labelledby="footer-tour-title">
-          <h2 class="footer__title h3" id="footer-tour-title">Take a tour</h2>
-          <ul class="footer__list">
-            <li class="footer__item">
-              <a class="footer__link" href="#furniture">Features</a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="#">Pricing</a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="#popular">Product</a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="#">Support</a>
-            </li>
-          </ul>
+          <details class="footer__details" open data-js-footer-accordion>
+            <summary class="footer__summary" data-js-footer-accordion-summary>
+              <h2 class="footer__title h3" id="footer-tour-title">Take a tour</h2>
+            </summary>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="#furniture">Features</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">Pricing</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#popular">Product</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">Support</a>
+              </li>
+            </ul>
+          </details>
         </nav>
         <nav class="footer__nav" aria-labelledby="footer-company-title">
-          <h2 class="footer__title h3" id="footer-company-title">Our company</h2>
-          <ul class="footer__list">
-            <li class="footer__item">
-              <a class="footer__link" href="#">About Us</a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="#">Blog</a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="#">Media</a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="#contacts">Contact Us</a>
-            </li>
-          </ul>
+          <details class="footer__details" open data-js-footer-accordion>
+            <summary class="footer__summary" data-js-footer-accordion-summary>
+              <h2 class="footer__title h3" id="footer-company-title">Our company</h2>
+            </summary>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="#">About Us</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">Blog</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">Media</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#contacts">Contact Us</a>
+              </li>
+            </ul>
+          </details>
         </nav>
         <div class="footer__subscribe">
           <h2 class="footer__title h3">Subscribe</h2>
           <p class="footer__cta">Subscribe to get the latest news from us</p>
-          <form class="footer__form subscribe-form subscribe-form--compat" data-js-newsletter>
+          <form class="footer__form subscribe-form subscribe-form--compact" data-js-newsletter>
             <label class="subscribe-form__label visually-hidden" for="footer-email">Email address</label>
             <div class="subscribe-form__field">
               <input class="subscribe-form__input" id="footer-email" type="email" autocomplete="email" required name="email" placeholder="example@mail.com"/>
@@ -747,9 +755,9 @@
           </form>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copyright"><small>Copyright &copy; 2026 DudeShape. Crafted with love.</small></p>
-      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright"><small>Copyright &copy; 2026 DudeShape. Crafted with love.</small></p>
     </div>
   </footer>
 </body>

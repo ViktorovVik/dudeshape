@@ -25,6 +25,12 @@
     border: none;
     outline: none;
     min-width: 0;
+
+    &:-webkit-autofill,
+    &:autofill {
+      box-shadow: 0 0 0 100px var(--color-light) inset;
+      -webkit-text-fill-color: black;
+    }
   }
 
   &__button {
@@ -47,6 +53,24 @@
       color: var(--color-light);
       opacity: 0.9;
       pointer-events: none;
+    }
+  }
+
+  &--compact {
+    .subscribe-form__button {
+      padding: 6px;
+      border-radius: 100%;
+      width: 28px;
+      background-color: var(--color-yellow);
+      color: var(--color-light);
+
+      @include hover {
+        background-color: var(--color-gray-icon);
+      }
+
+      &:active {
+        background-color: var(--color-gray-alt);
+      }
     }
   }
 }
