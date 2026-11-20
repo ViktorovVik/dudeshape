@@ -21,6 +21,7 @@ class MobileMenu {
     if (!this.headerElement) return;
     this.navElement = this.headerElement.querySelector(this.selectors.nav);
     this.burgerButtonElement = this.headerElement.querySelector(this.selectors.burgerButton);
+    this.firstNavLinkElement = this.headerElement.querySelector(this.selectors.navLink);
     if (!this.navElement || !this.burgerButtonElement) return;
     this.bindEvents();
   }
@@ -50,6 +51,16 @@ class MobileMenu {
     if (e.key === 'Escape' && this.isMenuOpen) {
       this.toggleMenu();
       this.burgerButtonElement.focus();
+    }
+
+    if (e.key === 'Tab' && this.isMenuOpen) {
+      if (e.shiftKey && document.activeElement === this.firstNavLinkElement) {
+        e.preventDefault();
+        this.burgerButtonElement.focus();
+      } else if (!e.shiftKey && document.activeElement === this.burgerButtonElement) {
+        e.preventDefault();
+        this.firstNavLinkElement.focus();
+      }
     }
   }
 
